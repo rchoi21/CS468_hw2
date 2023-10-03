@@ -1,5 +1,6 @@
 import sys
 from scapy.all import *
+# import os
 
 # The sendpacket function should create a spoofed UDP packet with
 # the payload and send it over to the destination IP and port specified.
@@ -7,17 +8,23 @@ from scapy.all import *
 # You should ensure that the payload does not exceed 150 bytes.
 # If it does, your function gracefully exits.
 def sendpacket(src_ip, dst_ip, dst_port, payload):
-    if payload > 150:
+    if len(payload) > 150: # check condition
         sys.exit()
 
-    ip = IP(dst = dst_ip, src = src_ip)
-    udp = UDP(dport=dst_port)
+    ip = IP(dst=dst_ip, src=src_ip)
+    udp = UDP(dport=dst_port) # UDP(sport=dst_port,dport=dst_port)
     packet = ip/udp/payload
+    # print(packet)
+    # while True: # add logic to check if packet is successful
+        # send(packet)
     send(packet)
+
 
 # for testing purposes... delete later
 def main():
-    return 0
+    sendpacket('192.168.1.1','192.168.1.1',1234,'\x01\x0f')
+    # return 0
+    # print(os.sys.path)
 
 if __name__ == "__main__":
     sys.exit(main())

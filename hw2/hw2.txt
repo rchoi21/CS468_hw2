@@ -12,4 +12,4 @@
 14: tcpdump -n -r trace11.pcap port 443 and dst 74.125.225.81
 15: 22, 25, 53, 80, 443
 16: nmap -sU
-17: Linux 2.6.32 (92%), Linux 4.4 (92%), Linux 2.6.32 or 3.10 (91%), Linux 2.6.32 - 2.6.35 (90%), Linux 2.6.32 - 2.6.39 (90%), Linux 5.0 - 5.4 (88%), Linux 3.11 - 4.1 (88%), Linux 3.2 - 3.8 (88%), Linux 4.0 (87%), Linux 2.6.18 (87%)
+17: Linux 2.6.32
