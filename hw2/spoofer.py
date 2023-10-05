@@ -1,4 +1,4 @@
-import sys
+# import sys
 from scapy.all import *
 # import os
 
@@ -9,22 +9,20 @@ from scapy.all import *
 # If it does, your function gracefully exits.
 def sendpacket(src_ip, dst_ip, dst_port, payload):
     if len(payload) > 150: # check condition
-        sys.exit()
+        exit(0)
 
     ip = IP(dst=dst_ip, src=src_ip)
     udp = UDP(dport=dst_port) # UDP(sport=dst_port,dport=dst_port)
     packet = ip/udp/payload
-    # print(packet)
-    # while True: # add logic to check if packet is successful
-        # send(packet)
+
     send(packet)
 
 
 # for testing purposes... delete later
-def main():
-    sendpacket('192.168.1.1','192.168.1.1',1234,'\x01\x0f')
-    # return 0
-    # print(os.sys.path)
+# def main():
+#     sendpacket('192.168.1.1','192.168.1.1',1234,'\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x01\x0f\x0f')
+#     # return 0
+#     # print(os.sys.path)
 
-if __name__ == "__main__":
-    sys.exit(main())
+# if __name__ == "__main__":
+#     sys.exit(main())
