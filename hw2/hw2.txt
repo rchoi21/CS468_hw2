@@ -10,6 +10,6 @@
 12: tcpdump -n -r trace11.pcap port 80
 13: tcpdump -n -r trace11.pcap arp
 14: tcpdump -n -r trace11.pcap port 443 and dst 74.125.225.81
-15: 22, 25, 53, 80, 443
+15: 22, 25, 80, 443
 16: nmap -sU
 17: Linux 2.6.32
